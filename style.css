@@ -21,6 +21,19 @@ body {
 .header {
     grid-row: 1;
     background-color: var(--header-color); 
+    color: white;
+    font-size: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title {
+    /* position: absolute;
+    left: 10rem; */
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
 }
 
 .content {
