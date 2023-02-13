@@ -100,7 +100,7 @@ button {
     font-size: 1.5rem;
 }
 
-.readStatus {
+.readStatus, .delete{
     background-color: #AA4465;
     color: var(--text-color);
     padding: 0.5rem;
@@ -112,6 +112,15 @@ button {
 
 .readStatus:hover {
     background-color: #A5243D;
+}
+
+.delete {
+    background-color: #95190C;
+    width: 60%;
+}
+
+.delete:hover {
+    background-color: #D1462F;
 }
 
 .addBtn {
