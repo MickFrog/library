@@ -22,6 +22,10 @@ p {
     word-break: break-all;
 }
 
+button {
+    border: 0px;
+}
+
 .container {
     min-height: 100vh;
     display: grid;
@@ -96,6 +100,20 @@ p {
     font-size: 1.5rem;
 }
 
+.readStatus {
+    background-color: #AA4465;
+    color: var(--text-color);
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    width: 30%;
+    font-family: inherit;
+    border-radius: 10px;
+}
+
+.readStatus:hover {
+    background-color: #A5243D;
+}
+
 .addBtn {
     position: sticky;
     margin-left: clamp(35rem, 90%, 90%);
@@ -107,7 +125,6 @@ p {
     border-radius: 35px;
 
     background-color: #D6FFB7;
-    border: 0px;
 }
 
 .addBtn:hover {
