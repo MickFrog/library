@@ -14,6 +14,7 @@
 
 body {
     margin: 0px;
+    min-width: 40rem;
 }
 
 p {
@@ -96,8 +97,8 @@ p {
 }
 
 .addBtn {
-    position: fixed;
-    right: 3rem;
+    position: sticky;
+    margin-left: clamp(35rem, 90%, 90%);
     bottom: 3rem;
 
     width: 4rem;
