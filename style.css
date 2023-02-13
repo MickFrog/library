@@ -59,6 +59,24 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
+.addBtn {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    border-radius: 35px;
+
+    background-color: #D6FFB7;
+    border: 0px;
+}
+
+.addBtn:hover {
+    background-color: #68EDC6;
+}
+
 .content {
     grid-row: 2;
     background-color: var(--content-bg);
