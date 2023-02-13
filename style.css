@@ -1,0 +1,29 @@
+:root{
+    --header-color: #0C0F0A;
+    --content-bg: #595758;
+}
+
+*{
+    box-sizing: border-box;
+    
+}
+
+body {
+    margin: 0px;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+
+.header {
+    grid-row: 1;
+    background-color: var(--header-color);
+}
+
+.content {
+    grid-row: 2;
+    background-color: var(--content-bg);
+}
