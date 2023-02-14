@@ -64,7 +64,7 @@ function addTile(newBk) {
 
     const readBtn = document.createElement('button');
     readBtn.textContent = 'Unread';
-    readBtn.className = 'readStatus';
+    readBtn.className = 'readFalse';
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Remove';

@@ -101,7 +101,7 @@ button {
     font-size: 1.5rem;
 }
 
-.readStatus, .delete{
+.readFalse, .delete{
     background-color: #AA4465;
     color: var(--text-color);
     padding: 0.5rem;
@@ -111,7 +111,7 @@ button {
     border-radius: 10px;
 }
 
-.readStatus:hover {
+.readFalse:hover {
     background-color: #A5243D;
 }
 
