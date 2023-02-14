@@ -5,6 +5,7 @@
     --content-bg: #1C1C1C;
     --pg-font: 'Cormorant Infant', serif;
     --text-color: #E5EAFA;
+    --green: #68EDC6;
 }
 
 *{
@@ -137,7 +138,7 @@ button {
 }
 
 .addBtn:hover {
-    background-color: #68EDC6;
+    background-color: var(--green);
 }
 
 .overlay{
@@ -146,4 +147,19 @@ button {
     height: 100%;
     top: 0px;
     background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-Book-Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 300px;
+    background-color: var(--green);
 }
