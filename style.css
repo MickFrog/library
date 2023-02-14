@@ -124,7 +124,7 @@ button {
 }
 
 .addBtn {
-    position: sticky;
+    position: fixed;
     margin-left: clamp(35rem, 90%, 90%);
     bottom: 3rem;
 
