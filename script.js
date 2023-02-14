@@ -69,17 +69,21 @@ function initReadButton(read_stat) {
     return readBtn;
 }
 
+function createParagraph(content) {
+    let para = document.createElement('p');
+    para.textContent = content;
+
+    return para;
+};
+
 function addTile(newBk) {
     let newDiv = document.createElement('div');
 
-    const bkTitle = document.createElement('p');
-    bkTitle.textContent = newBk['bkName'].toUpperCase();
+    const bkTitle = createParagraph(newBk['bkName'].toUpperCase());
 
-    const bkAuth = document.createElement('p');
-    bkAuth.textContent = 'by ' + newBk['author'];
+    const bkAuth = createParagraph('by ' + newBk['author']);
 
-    const bkpages = document.createElement('p');
-    bkpages.textContent = newBk['pages'] + ' pages';
+    const bkpages = createParagraph(newBk['pages'] + ' pages');
 
     const readButton = initReadButton(newBk['read'])
 
