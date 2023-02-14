@@ -1,7 +1,7 @@
 let myBooks = [];
 
-function Book(name, author, pages, read, index) {
-    this.name = name;
+function Book(bkName, author, pages, read, index) {
+    this.bkName = bkName;
     this.author = author;
     this.pages= pages;
     this.read = read;
@@ -18,6 +18,7 @@ const title = document.getElementById('bookName');
 const author = document.getElementById('bookAuthor');
 const pages = document.getElementById('pages');
 const readStat = document.getElementById('read?');
+const bookSection = document.querySelector('.bookTiles');
 
 //add event listeners
 addButton.addEventListener('click', ()=> {
@@ -26,17 +27,46 @@ addButton.addEventListener('click', ()=> {
 
 overlay.addEventListener('click', (event)=> {
     if (event.target.id == 'overlay') {
-        overlay.style.display = 'none';
+        removeForm();
     }
 });
 
 addform.addEventListener('submit', ()=> {
-    myBooks.push(new Book(title.value,
+    let newBk = new Book(title.value,
         author.value, 
         pages.value,
         readStat.checked,
-        myBooks.length));
+        myBooks.length)
+    
+    myBooks.push(newBk);
     addform.reset();
+    removeForm();
 
-    console.log(myBooks);
+    addTile(newBk);
 });
+
+//functions
+function removeForm() {
+    overlay.style.display = 'none';
+}
+
+function addTile(newBk) {
+    let newDiv = document.createElement('div');
+
+    const bkTitle = document.createElement('p');
+    bkTitle.textContent = newBk['bkName'].toUpperCase();
+
+    const bkAuth = document.createElement('p');
+    bkAuth.textContent = 'by ' + newBk['author'];
+
+    const bkpages = document.createElement('p');
+    bkpages.textContent = newBk['pages'];
+
+    newDiv.appendChild(bkTitle);
+    newDiv.appendChild(bkAuth);
+    newDiv.appendChild(bkpages);
+
+    newDiv.className = 'tile';
+
+    bookSection.appendChild(newDiv);
+}
