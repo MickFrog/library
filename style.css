@@ -115,6 +115,15 @@ button {
     background-color: #A5243D;
 }
 
+.readTrue {
+    background-color: #D6FFB7;
+    color: black;
+}
+
+.readTrue:hover {
+    background-color: var(--green);
+}
+
 .delete {
     background-color: #95190C;
     width: 60%;
