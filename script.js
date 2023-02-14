@@ -60,11 +60,21 @@ function addTile(newBk) {
     bkAuth.textContent = 'by ' + newBk['author'];
 
     const bkpages = document.createElement('p');
-    bkpages.textContent = newBk['pages'];
+    bkpages.textContent = newBk['pages'] + ' pages';
+
+    const readBtn = document.createElement('button');
+    readBtn.textContent = 'Unread';
+    readBtn.className = 'readStatus';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Remove';
+    deleteBtn.className = 'delete';
 
     newDiv.appendChild(bkTitle);
     newDiv.appendChild(bkAuth);
     newDiv.appendChild(bkpages);
+    newDiv.appendChild(readBtn);
+    newDiv.appendChild(deleteBtn);
 
     newDiv.className = 'tile';
 
