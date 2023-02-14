@@ -1,3 +1,13 @@
+let myBooks = [];
+
+function Book(name, author, pages, read, index) {
+    this.name = name;
+    this.author = author;
+    this.pages= pages;
+    this.read = read;
+    this.index = index;
+}
+
 //Acquire elements
 const addButton = document.getElementById('addBtn');
 const overlay = document.getElementById('overlay');
@@ -21,6 +31,12 @@ overlay.addEventListener('click', (event)=> {
 });
 
 addform.addEventListener('submit', ()=> {
-    
+    myBooks.push(new Book(title.value,
+        author.value, 
+        pages.value,
+        readStat.checked,
+        myBooks.length));
     addform.reset();
+
+    console.log(myBooks);
 });
