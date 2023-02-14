@@ -50,6 +50,25 @@ function removeForm() {
     overlay.style.display = 'none';
 }
 
+function initReadButton(read_stat) {
+    let readBtn = document.createElement('button');
+    readBtn.textContent = 'Unread';
+    readBtn.className = 'readFalse';
+    readBtn.value = read_stat;
+
+    //initialize read status button
+    if (readBtn.value == 'true') {
+        readBtn.value = 'true';
+        readBtn.textContent = 'Read';
+        readBtn.classList.add('readTrue');
+    }
+    readBtn.addEventListener('click', (event)=> {
+        updateRead(event.target);
+    });
+
+    return readBtn;
+}
+
 function addTile(newBk) {
     let newDiv = document.createElement('div');
 
@@ -62,20 +81,7 @@ function addTile(newBk) {
     const bkpages = document.createElement('p');
     bkpages.textContent = newBk['pages'] + ' pages';
 
-    const readBtn = document.createElement('button');
-    readBtn.textContent = 'Unread';
-    readBtn.className = 'readFalse';
-    readBtn.value = newBk['read'];
-
-    //initialize read status button
-    if (readBtn.value == 'true') {
-        readBtn.value = 'true';
-        readBtn.textContent = 'Read';
-        readBtn.classList.add('readTrue');
-    }
-    readBtn.addEventListener('click', (event)=> {
-        updateRead(event.target);
-    });
+    const readButton = initReadButton(newBk['read'])
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Remove';
@@ -84,7 +90,7 @@ function addTile(newBk) {
     newDiv.appendChild(bkTitle);
     newDiv.appendChild(bkAuth);
     newDiv.appendChild(bkpages);
-    newDiv.appendChild(readBtn);
+    newDiv.appendChild(readButton);
     newDiv.appendChild(deleteBtn);
 
     newDiv.className = 'tile';
