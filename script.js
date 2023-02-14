@@ -12,6 +12,7 @@ function Book(bkName, author, pages, read, index) {
 const addButton = document.getElementById('addBtn');
 const overlay = document.getElementById('overlay');
 const addform = document.getElementById('add-Book-Form');
+const readButton = document.getElementById('readBtn');
 
 //Acquire form elements
 const title = document.getElementById('bookName');
@@ -43,6 +44,19 @@ addform.addEventListener('submit', ()=> {
     removeForm();
 
     addTile(newBk);
+});
+
+readButton.addEventListener('click', ()=> {
+    if (readButton.value == 'false') {
+        readButton.value = 'true';
+        readButton.textContent = 'Read';
+        readButton.classList.add('readTrue');
+
+    } else {
+        readButton.value = 'false';
+        readButton.textContent = 'Unread';
+        readButton.classList.remove('readTrue');
+    }
 });
 
 //functions
