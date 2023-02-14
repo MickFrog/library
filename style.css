@@ -5,7 +5,7 @@
     --content-bg: #1C1C1C;
     --pg-font: 'Cormorant Infant', serif;
     --text-color: #E5EAFA;
-    --green: #68EDC6;
+    --green: #68EDC6; 
 }
 
 *{
@@ -162,4 +162,16 @@ button {
     font-size: 1.5rem;
     width: 300px;
     background-color: var(--green);
+}
+
+
+.add-Book-Form input{
+    height: 2rem;
+    width: 80%;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 8px;
+    border: 0px;
+
+    background-color: #D6FFB7;
 }
