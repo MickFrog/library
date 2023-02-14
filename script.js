@@ -65,6 +65,14 @@ function addTile(newBk) {
     const readBtn = document.createElement('button');
     readBtn.textContent = 'Unread';
     readBtn.className = 'readFalse';
+    readBtn.value = newBk['read'];
+
+    //initialize read status button
+    if (readBtn.value == 'true') {
+        readBtn.value = 'true';
+        readBtn.textContent = 'Read';
+        readBtn.classList.add('readTrue');
+    }
     readBtn.addEventListener('click', (event)=> {
         updateRead(event.target);
     });
