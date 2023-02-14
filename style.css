@@ -158,20 +158,26 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 0.5rem;
+    padding: 1.5rem;
     font-size: 1.5rem;
-    width: 300px;
-    background-color: var(--green);
+    width: 400px;
+    background-color: #AA4465;
+    color: var(--text-color);
+    border-radius: 15px;
 }
 
 
-.add-Book-Form input{
-    height: 2rem;
+.add-Book-Form input, #addBookBtn{
+    height: 2.5rem;
     width: 80%;
     font-family: inherit;
     font-size: inherit;
     border-radius: 8px;
     border: 0px;
 
-    background-color: #D6FFB7;
+    background-color: #C6D8D3;
+}
+
+#addBookBtn {
+    background-color: var(--green);
 }
