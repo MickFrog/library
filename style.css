@@ -154,7 +154,7 @@ button {
     display: none;
 }
 
-.add-Book-Form {
+#add-Book-Form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,7 +168,7 @@ button {
 }
 
 
-.add-Book-Form input, #addBookBtn{
+#add-Book-Form input, #addBookBtn{
     height: 2.5rem;
     width: 80%;
     font-family: inherit;
@@ -179,7 +179,7 @@ button {
     background-color: #C6D8D3;
 }
 
-.add-Book-Form input:focus {
+#add-Book-Form input:focus {
     outline: none;
     background-color: var(--text-color);
 }
