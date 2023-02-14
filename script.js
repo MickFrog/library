@@ -6,3 +6,10 @@ const overlay = document.getElementById('overlay');
 addButton.addEventListener('click', ()=> {
     overlay.style.display = 'flex';
 });
+
+overlay.addEventListener('click', (event)=> {
+    if (event.target.id == 'overlay') {
+        overlay.style.display = 'none';
+    }
+
+});
