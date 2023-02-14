@@ -12,7 +12,6 @@ function Book(bkName, author, pages, read, index) {
 const addButton = document.getElementById('addBtn');
 const overlay = document.getElementById('overlay');
 const addform = document.getElementById('add-Book-Form');
-const readButton = document.getElementById('readBtn');
 
 //Acquire form elements
 const title = document.getElementById('bookName');
@@ -46,19 +45,6 @@ addform.addEventListener('submit', ()=> {
     addTile(newBk);
 });
 
-readButton.addEventListener('click', ()=> {
-    if (readButton.value == 'false') {
-        readButton.value = 'true';
-        readButton.textContent = 'Read';
-        readButton.classList.add('readTrue');
-
-    } else {
-        readButton.value = 'false';
-        readButton.textContent = 'Unread';
-        readButton.classList.remove('readTrue');
-    }
-});
-
 //functions
 function removeForm() {
     overlay.style.display = 'none';
@@ -79,6 +65,9 @@ function addTile(newBk) {
     const readBtn = document.createElement('button');
     readBtn.textContent = 'Unread';
     readBtn.className = 'readFalse';
+    readBtn.addEventListener('click', (event)=> {
+        updateRead(event.target);
+    });
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Remove';
@@ -93,4 +82,17 @@ function addTile(newBk) {
     newDiv.className = 'tile';
 
     bookSection.appendChild(newDiv);
+}
+
+function updateRead(readButton) {
+    if (readButton.value == 'false') {
+        readButton.value = 'true';
+        readButton.textContent = 'Read';
+        readButton.classList.add('readTrue');
+
+    } else {
+        readButton.value = 'false';
+        readButton.textContent = 'Unread';
+        readButton.classList.remove('readTrue');
+    }
 }
