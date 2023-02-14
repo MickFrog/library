@@ -178,6 +178,15 @@ button {
     background-color: #C6D8D3;
 }
 
+.add-Book-Form input:focus {
+    outline: none;
+    background-color: var(--text-color);
+}
+
 #addBookBtn {
     background-color: var(--green);
+}
+
+#addBookBtn:hover {
+    background-color: #D6FFB7;
 }
