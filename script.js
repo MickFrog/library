@@ -66,6 +66,11 @@ function updateReadCount(val) {
     readBooks.textContent = readCount;
 }
 
+function updateTotalCount(val) {
+    totalCount += val;
+    totalBks.textContent = totalCount;
+}
+
 function initReadButton(read_stat) {
     let readBtn = document.createElement('button');
     readBtn.id = 'readBtn';
@@ -108,6 +113,8 @@ function createDeleteBtn(bk, objDiv) {
             if(objDiv.querySelector('#readBtn').value == 'true') {
                 updateReadCount(-1);
             }
+            updateTotalCount(-1);
+
             bookSection.removeChild(objDiv);
         }
     });
@@ -133,6 +140,8 @@ function addTile(newBk) {
     newDiv.appendChild(bkpages);
     newDiv.appendChild(readButton);
     newDiv.appendChild(deleteButton);
+
+    updateTotalCount(1);
 
     newDiv.className = 'tile';
 
