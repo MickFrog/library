@@ -1,4 +1,6 @@
 let myBooks = [];
+let readCount = 0;
+let totalCount = 0;
 
 function Book(bkName, author, pages, read, index) {
     this.bkName = bkName;
