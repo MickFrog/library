@@ -68,6 +68,7 @@ function updateReadCount(val) {
 
 function initReadButton(read_stat) {
     let readBtn = document.createElement('button');
+    readBtn.id = 'readBtn';
     readBtn.textContent = 'Unread';
     readBtn.className = 'readFalse';
     readBtn.value = read_stat;
@@ -112,8 +113,12 @@ function addTile(newBk) {
         if (event.target.className == 'delete') {
             //remove the book from array - set it to null to preserve positions of other books
             myBooks[newBk['index']] = null;
+
+            //if book was read then reduce count
+            if(newDiv.querySelector('#readBtn').value == 'true') {
+                updateReadCount(-1);
+            }
             bookSection.removeChild(newDiv);
-            console.log(myBooks);
         }
     });
 
