@@ -91,6 +91,15 @@ function addTile(newBk) {
     deleteBtn.textContent = 'Remove';
     deleteBtn.className = 'delete';
 
+    newDiv.addEventListener('click', (event)=> {
+        if (event.target.className == 'delete') {
+            //remove the book from array - set it to null to preserve positions of other books
+            myBooks[newBk['index']] = null;
+            bookSection.removeChild(newDiv);
+            console.log(myBooks);
+        }
+    });
+
     newDiv.appendChild(bkTitle);
     newDiv.appendChild(bkAuth);
     newDiv.appendChild(bkpages);
