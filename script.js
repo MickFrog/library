@@ -19,6 +19,8 @@ const author = document.getElementById('bookAuthor');
 const pages = document.getElementById('pages');
 const readStat = document.getElementById('read?');
 const bookSection = document.querySelector('.bookTiles');
+const readBooks = document.getElementById('readBooks');
+const totalBks = document.getElementById('totalBks')
 
 //add event listeners
 addButton.addEventListener('click', ()=> {
