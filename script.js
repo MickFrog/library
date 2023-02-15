@@ -54,6 +54,18 @@ function removeForm() {
     overlay.style.display = 'none';
 }
 
+function updateReadCount(val) {
+    if (val == 'true') {
+        val = 1;
+
+    } else if (val == 'false') {
+        val = -1;
+    }
+
+    readCount += val;
+    readBooks.textContent = readCount;
+}
+
 function initReadButton(read_stat) {
     let readBtn = document.createElement('button');
     readBtn.textContent = 'Unread';
@@ -64,10 +76,11 @@ function initReadButton(read_stat) {
     if (readBtn.value == 'true') {
         readBtn.value = 'true';
         readBtn.textContent = 'Read';
+        updateReadCount(1);
         readBtn.classList.add('readTrue');
     }
     readBtn.addEventListener('click', (event)=> {
-        updateRead(event.target);
+        updateReadBtn(event.target);
     });
 
     return readBtn;
@@ -115,15 +128,17 @@ function addTile(newBk) {
     bookSection.appendChild(newDiv);
 }
 
-function updateRead(readButton) {
+function updateReadBtn(readButton) {
     if (readButton.value == 'false') {
         readButton.value = 'true';
         readButton.textContent = 'Read';
+        updateReadCount(1);
         readButton.classList.add('readTrue');
 
     } else {
         readButton.value = 'false';
         readButton.textContent = 'Unread';
+        updateReadCount(-1);
         readButton.classList.remove('readTrue');
     }
 }
