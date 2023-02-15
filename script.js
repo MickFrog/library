@@ -94,6 +94,27 @@ function createParagraph(content) {
     return para;
 };
 
+function createDeleteBtn(bk, objDiv) {
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Remove';
+    deleteBtn.className = 'delete';
+
+    objDiv.addEventListener('click', (event)=> {
+        if (event.target.className == 'delete') {
+            //remove the book from array - set it to null to preserve positions of other books
+            myBooks[bk['index']] = null;
+
+            //if book was read then reduce count
+            if(objDiv.querySelector('#readBtn').value == 'true') {
+                updateReadCount(-1);
+            }
+            bookSection.removeChild(objDiv);
+        }
+    });
+
+    return deleteBtn;
+}
+
 function addTile(newBk) {
     let newDiv = document.createElement('div');
 
@@ -105,28 +126,13 @@ function addTile(newBk) {
 
     const readButton = initReadButton(newBk['read'])
 
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Remove';
-    deleteBtn.className = 'delete';
-
-    newDiv.addEventListener('click', (event)=> {
-        if (event.target.className == 'delete') {
-            //remove the book from array - set it to null to preserve positions of other books
-            myBooks[newBk['index']] = null;
-
-            //if book was read then reduce count
-            if(newDiv.querySelector('#readBtn').value == 'true') {
-                updateReadCount(-1);
-            }
-            bookSection.removeChild(newDiv);
-        }
-    });
+    const deleteButton = createDeleteBtn(newBk, newDiv);
 
     newDiv.appendChild(bkTitle);
     newDiv.appendChild(bkAuth);
     newDiv.appendChild(bkpages);
     newDiv.appendChild(readButton);
-    newDiv.appendChild(deleteBtn);
+    newDiv.appendChild(deleteButton);
 
     newDiv.className = 'tile';
 
