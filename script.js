@@ -35,7 +35,8 @@ overlay.addEventListener('click', (event)=> {
     }
 });
 
-addform.addEventListener('submit', ()=> {
+addform.addEventListener('submit', (event)=> {
+    event.preventDefault();
     let newBk = new Book(title.value,
         author.value, 
         pages.value,
