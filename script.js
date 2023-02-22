@@ -2,12 +2,14 @@ let myBooks = [];
 let readCount = 0;
 let totalCount = 0;
 
-function Book(bkName, author, pages, read, index) {
-    this.bkName = bkName;
-    this.author = author;
-    this.pages= pages;
-    this.read = read;
-    this.index = index;
+class Book {
+    constructor(bkName, author, pages, read, index) {
+        this.bkName = bkName;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.index = index;
+    }
 }
 
 //Acquire elements
