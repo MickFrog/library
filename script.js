@@ -43,6 +43,8 @@ title.addEventListener('input', () => {
 
     } else if (title.validity.tooShort == true) {
         title.setCustomValidity("The book title should have more than 8 characters.");
+    } else {
+        title.setCustomValidity('');
     }
 });
 
@@ -52,6 +54,19 @@ author.addEventListener('input', () => {
 
     } else if (author.validity.tooShort == true) {
         author.setCustomValidity("The book author should have more than 8 characters.");
+    } else {
+        author.setCustomValidity('');
+    }
+});
+
+pages.addEventListener('input', () => {
+    if (pages.validity.rangeUnderflow) {
+        pages.setCustomValidity('The pages must be greater or equal to 25.');
+
+    } else if (pages.validity.rangeOverflow) {
+        pages.setCustomValidity('The pages must be less or equal to 10,000.');
+    } else {
+        pages.setCustomValidity('');
     }
 });
 
