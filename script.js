@@ -44,7 +44,16 @@ title.addEventListener('input', () => {
     } else if (title.validity.tooShort == true) {
         title.setCustomValidity("The book title should have more than 8 characters.");
     }
-})
+});
+
+author.addEventListener('input', () => {
+    if (author.validity.valueMissing == true) {
+        author.setCustomValidity('Please insert a book author.');
+
+    } else if (author.validity.tooShort == true) {
+        author.setCustomValidity("The book author should have more than 8 characters.");
+    }
+});
 
 addform.addEventListener('submit', (event)=> {
     event.preventDefault();
