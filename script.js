@@ -38,7 +38,10 @@ overlay.addEventListener('click', (event)=> {
 });
 
 title.addEventListener('input', () => {
-    if (title.validity.tooShort == true) {
+    if (title.validity.valueMissing == true) {
+        title.setCustomValidity('Please insert a book title.');
+
+    } else if (title.validity.tooShort == true) {
         title.setCustomValidity("The book title should have more than 8 characters.");
     }
 })
