@@ -37,6 +37,12 @@ overlay.addEventListener('click', (event)=> {
     }
 });
 
+title.addEventListener('input', () => {
+    if (title.validity.tooShort == true) {
+        title.setCustomValidity("The book title should have more than 8 characters.");
+    }
+})
+
 addform.addEventListener('submit', (event)=> {
     event.preventDefault();
     let newBk = new Book(title.value,
