@@ -18,7 +18,6 @@ body {
 
 p {
   margin: 0px;
-  word-break: break-all;
 }
 
 button {
@@ -28,7 +27,7 @@ button {
 .container {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: 100px 9fr;
 
   font-family: var(--pg-font);
 }
@@ -59,6 +58,9 @@ button {
 
   display: flex;
   justify-content: center;
+
+  position: sticky;
+  top: 0px;
 }
 
 .info {
@@ -68,9 +70,12 @@ button {
   gap: 2rem;
 
   padding: 5px 10px;
-  font-size: calc(2vmin + 10px);
+  font-size: calc(2vmin + 12px);
   background-color: #aa4465;
   border-radius: 0px 0px 10px 10px;
+
+  position: sticky;
+  top: 0px;
 }
 
 .books {
@@ -83,8 +88,10 @@ button {
   grid-column: 2;
 
   display: grid;
-  grid-template: 1fr 1fr 1fr / repeat(auto-fill, minmax(15rem, 20rem));
-  gap: 3rem;
+  grid-template: 1fr / repeat(auto-fill, minmax(15rem, 20rem));
+  gap: 2rem;
+  padding-bottom: 32px;
+  justify-content: center;
 }
 
 .tile {
@@ -97,7 +104,7 @@ button {
   border-radius: 10px;
   font-size: 1.5rem;
 
-  margin: 1rem;
+  overflow-x: auto;
 }
 
 .readFalse,
@@ -134,13 +141,13 @@ button {
 
 .addBtn {
   position: fixed;
-  margin-left: clamp(35rem, 90%, 90%);
   bottom: 3rem;
+  right: 2rem;
 
   width: 4rem;
   height: 4rem;
   font-size: 3rem;
-  border-radius: 35px;
+  border-radius: 50%;
 
   background-color: #d6ffb7;
 }
@@ -167,9 +174,9 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
+  margin: 8px;
   font-size: 1.5rem;
-  width: 400px;
   background-color: #aa4465;
   color: var(--text-color);
   border-radius: 15px;
@@ -198,4 +205,11 @@ button {
 
 #addBookBtn:hover {
   background-color: #d6ffb7;
+}
+
+@media (max-width: 600px) {
+  .addBtn {
+    bottom: 2rem;
+    right: 1rem;
+  }
 }
