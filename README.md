@@ -12,7 +12,7 @@ This is a library project part of [The Odin Project](https://www.theodinproject.
 
 ## Demo
 
-    The live project can be viewed [here](https://mickfrog.github.io/library)
+The live project can be viewed [here](https://mickfrog.github.io/library)
 
 ## Preview
 
